@@ -6,11 +6,17 @@ npm install --save-dev typescript
 
 npm install @types/node --save-dev
 
-# The rootDir is where TypeScript will look for our code. We have directed it to /src folder where we will write our code. 
-# The outDir folder defines where the compiled code is put. Such code is configured to be stored in build/ folder.
+# Inicialize tsconfig
 
-npx tsc --init --rootDir \ --outDir build \
+npx tsc --init
 
 #  ts-node allows you to directly run TypeScript code without the need to transpile it to JavaScript beforehand.
 
 npm install --save-dev ts-node
+
+
+
+
+# Generate React app with ts
+
+npx create-react-app my-app --template typescript
