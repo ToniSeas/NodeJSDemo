@@ -18,11 +18,30 @@ class TaskData {
         res.status(200).send(this.tasks);
     }
 
+    getTaskById(req: Request, res: Response): void {
+        const { id } = req.query;
+
+        const task: Task | undefined = this.tasks.find(task => task.id === Number(id));
+
+        if (task) {
+            res.json({ message: 'Task encontrada', task: task });
+        } else {
+            res.status(404).json({ message: 'Task no encontrada' });
+        }
+    }
+
     createTask(req: Request, res: Response): void {
-        const { id, name, statement } = req.query;
+        const { name, statement } = req.query;
+
+        const existingIds = this.tasks.map(task => task.id);
+        let newId = 1;
+
+        while (existingIds.includes(newId)) {
+            newId++;
+        }
 
         const newTask: Task = {
-            id: Number(id),
+            id: Number(newId),
             name: String(name),
             statement: String(statement)
         };

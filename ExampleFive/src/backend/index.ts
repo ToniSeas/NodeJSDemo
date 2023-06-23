@@ -1,7 +1,10 @@
 import express, { Request, Response, NextFunction } from 'express';
-import Router from './routes/routes.config'
+import Router from './src/routes/routes.config'
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
 
 app.use(function (req: Request, res: Response, next: NextFunction) {
     if (req.method === 'OPTIONS') {

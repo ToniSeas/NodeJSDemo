@@ -15,6 +15,9 @@ class Router {
         app.get('/getTasks', [
             this.taskBusiness.getTasks.bind(this.taskBusiness)
         ]);
+        app.get('/getTaskById', [
+            this.taskBusiness.getTaskById.bind(this.taskBusiness)
+        ]);
         app.post('/createTask', [
             this.taskBusiness.createTask.bind(this.taskBusiness)
         ]);

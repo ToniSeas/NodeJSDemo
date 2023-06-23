@@ -13,6 +13,10 @@ class TaskBusiness {
         this.taskData.getTasks(req, res);
     }
 
+    getTaskById(req: Request, res: Response): void {
+        this.taskData.getTaskById(req, res);
+    }
+
     createTask(req: Request, res: Response): void {
         this.taskData.createTask(req, res);
     }
