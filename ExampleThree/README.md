@@ -1,3 +1,6 @@
+# Inicialize npm
+npm init
+
 # Install the TypeScript compiler
 
 npm install --save-dev typescript
@@ -13,9 +16,6 @@ npx tsc --init
 #  ts-node allows you to directly run TypeScript code without the need to transpile it to JavaScript beforehand.
 
 npm install --save-dev ts-node
-
-
-
 
 # Generate React app with ts
 
